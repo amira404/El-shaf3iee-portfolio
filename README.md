@@ -5,28 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Al Shafiee Engineering Solutions - Portfolio</title>
   <style>
-    body {
+    /* Reset */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, sans-serif;
       display: flex;
-      background: #f4f4f4;
+      background: linear-gradient(to right, rgba(10, 61, 98, 0.95), rgba(30, 144, 255, 0.85)),
+                  url('blueprint-bg.jpg') center/cover no-repeat fixed;
+      color: #fff;
+      overflow-x: hidden;
     }
 
     /* Sidebar */
     .sidebar {
       width: 240px;
-      background: #0a3d62;
+      background: rgba(10, 61, 98, 0.95);
       color: #fff;
       height: 100vh;
       position: fixed;
       top: 0;
       left: 0;
       padding: 20px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+      animation: slideInLeft 1s ease;
     }
     .sidebar h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 22px;
+      letter-spacing: 1px;
     }
     .sidebar a {
       display: block;
@@ -35,75 +47,98 @@
       margin: 15px 0;
       padding: 10px;
       border-radius: 5px;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      font-weight: bold;
     }
     .sidebar a:hover {
       background: #1e90ff;
+      transform: translateX(5px);
+      box-shadow: 0 0 10px #1e90ff;
     }
 
-    /* Content Area */
+    /* Main Content */
     .content {
       margin-left: 260px;
       padding: 20px;
       width: calc(100% - 260px);
     }
     section {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
+      animation: fadeIn 1.2s ease;
     }
     h3 {
-      color: #0a3d62;
+      color: #fff;
       margin-bottom: 15px;
+      font-size: 24px;
     }
     p {
       line-height: 1.6;
-      color: #333;
+      color: #e0e0e0;
     }
 
     /* General Section */
     .general {
       text-align: center;
+      padding: 40px 20px;
     }
     .general img {
       width: 200px;
       margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px #1e90ff);
+      transition: transform 0.4s ease;
+    }
+    .general img:hover {
+      transform: scale(1.1);
     }
     .general h1 {
-      color: #0a3d62;
+      color: #fff;
       margin-bottom: 10px;
+      font-size: 30px;
+      text-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
     }
 
-    /* Services List */
+    /* Services */
     .services-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
     .service-card {
-      background: #fff;
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
       padding: 20px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+    }
+    .service-card:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: rgba(30, 144, 255, 0.3);
+      box-shadow: 0 0 15px rgba(30, 144, 255, 0.7);
     }
 
-    /* Card Containers */
+    /* Cards */
     .card-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
+      justify-content: center;
     }
     .card {
       width: 200px;
-      border: 1px solid #ddd;
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
       text-align: center;
       padding: 15px;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      backdrop-filter: blur(6px);
+      transition: all 0.4s ease;
+      cursor: pointer;
     }
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px) scale(1.05);
+      background: rgba(30, 144, 255, 0.3);
+      box-shadow: 0 0 15px rgba(30, 144, 255, 0.7);
     }
     .card img {
       width: 100px;
@@ -111,29 +146,34 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 10px;
+      border: 2px solid #1e90ff;
+      transition: transform 0.4s ease;
+    }
+    .card img:hover {
+      transform: scale(1.1) rotate(3deg);
     }
     .card h4 {
       margin: 10px 0 5px;
       font-size: 16px;
-      color: #0a3d62;
+      color: #fff;
     }
     .card p {
       font-size: 14px;
-      color: #555;
+      color: #ddd;
     }
 
-    /* Chatbot Box */
+    /* Chatbot */
     .chatbot {
       position: fixed;
       bottom: 20px;
       right: 20px;
       width: 300px;
-      background: #fff;
+      background: rgba(255,255,255,0.95);
       border: 1px solid #ccc;
       border-radius: 10px;
       display: none;
       flex-direction: column;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
     }
     .chatbot-header {
       background: #0a3d62;
@@ -148,6 +188,7 @@
       height: 200px;
       overflow-y: auto;
       font-size: 14px;
+      color: #000;
     }
     .chatbot-input {
       display: flex;
@@ -173,7 +214,22 @@
       padding: 10px 15px;
       border-radius: 50%;
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .chatbot-toggle:hover {
+      transform: scale(1.2);
+      background: #1e90ff;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
     }
   </style>
 </head>
@@ -189,7 +245,7 @@
     <a href="#contact">Contact</a>
   </div>
 
-  <!-- Main Content -->
+  <!-- Content -->
   <div class="content">
     <!-- General Section -->
     <section id="general" class="general">
@@ -314,7 +370,7 @@
     <!-- Contact Section -->
     <section id="contact">
       <h3>Contact Us</h3>
-      <p>Email: <a href="mailto:elshafiee@gmail.com">elshafiee@gmail.com</a></p>
+      <p>Email: <a href="mailto:elshafiee@gmail.com" style="color:#1e90ff;">elshafiee@gmail.com</a></p>
       <p>Phone: 010 | 011</p>
     </section>
   </div>
@@ -358,4 +414,3 @@
   </script>
 </body>
 </html>
-
