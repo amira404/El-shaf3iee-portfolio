@@ -5,51 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Al Shafiee Engineering Solutions - Portfolio</title>
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Body with animated engineering background */
+    /* -------------------
+      Global Styles
+    -------------------- */
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      display: flex;
-      color: #fff;
+      background: url('A_digital_rendering_of_an_architectural_or_enginee.png') no-repeat center center fixed;
+      background-size: cover;
       overflow-x: hidden;
-      background: linear-gradient(to right, rgba(10, 61, 98, 0.95), rgba(30, 144, 255, 0.85)),
-                  url('background-engineering.jpg') center/cover no-repeat fixed;
-      animation: backgroundMove 20s linear infinite;
     }
 
-    @keyframes backgroundMove {
-      0% { background-position: center top; }
-      50% { background-position: center bottom; }
-      100% { background-position: center top; }
+    h1, h3, h4 {
+      color: #0a3d62;
     }
 
-    /* Sidebar */
+    p {
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* -------------------
+      Navbar (Hamburger Menu)
+    -------------------- */
+    .hamburger {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hamburger div {
+      background-color: #fff;
+      height: 4px;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* Sidebar Hidden */
     .sidebar {
-      width: 240px;
-      background: rgba(10, 61, 98, 0.95);
-      color: #fff;
-      height: 100vh;
       position: fixed;
       top: 0;
-      left: 0;
+      left: -260px;
+      width: 240px;
+      height: 100vh;
+      background: rgba(10, 61, 98, 0.97);
       padding: 20px;
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-      animation: slideInLeft 1s ease;
-      z-index: 10;
+      box-shadow: 2px 0 6px rgba(0,0,0,0.3);
+      transition: left 0.4s ease;
+      z-index: 1000;
     }
+
+    .sidebar.active {
+      left: 0;
+    }
+
     .sidebar h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 22px;
-      letter-spacing: 1px;
-      color: #1e90ff;
+      color: #fff;
     }
+
     .sidebar a {
       display: block;
       color: #fff;
@@ -57,138 +80,130 @@
       margin: 15px 0;
       padding: 10px;
       border-radius: 5px;
-      transition: all 0.3s ease;
-      font-weight: bold;
+      transition: background 0.3s ease;
     }
+
     .sidebar a:hover {
       background: #1e90ff;
-      transform: translateX(5px);
-      box-shadow: 0 0 10px #1e90ff;
     }
 
-    /* Main Content */
+    /* -------------------
+      Main Content
+    -------------------- */
     .content {
-      margin-left: 260px;
       padding: 20px;
-      width: calc(100% - 260px);
-      position: relative;
-      z-index: 5;
-    }
-    section {
-      margin-bottom: 60px;
-      animation: fadeIn 1.2s ease;
-    }
-    h3 {
-      color: #fff;
-      margin-bottom: 15px;
-      font-size: 24px;
-      text-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
-    }
-    p {
-      line-height: 1.6;
-      color: #e0e0e0;
+      margin-top: 60px;
+      transition: margin-left 0.4s ease;
     }
 
-    /* General Section */
+    section {
+      margin-bottom: 50px;
+      background: rgba(255,255,255,0.85);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* -------------------
+      General Section
+    -------------------- */
     .general {
       text-align: center;
-      padding: 40px 20px;
     }
+
     .general img {
       width: 200px;
       margin-bottom: 20px;
-      filter: drop-shadow(0 0 10px #1e90ff);
-      transition: transform 0.4s ease;
-    }
-    .general img:hover {
-      transform: scale(1.1) rotate(2deg);
-    }
-    .general h1 {
-      color: #fff;
-      margin-bottom: 10px;
-      font-size: 30px;
-      text-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
+      border: none; /* Remove white frame */
+      background: none;
     }
 
-    /* Services */
+    /* -------------------
+      Services Grid
+    -------------------- */
     .services-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
+
     .service-card {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.9);
       border-radius: 10px;
       padding: 20px;
       text-align: center;
-      transition: all 0.4s ease;
-      cursor: pointer;
-      backdrop-filter: blur(5px);
-    }
-    .service-card:hover {
-      transform: translateY(-5px) scale(1.03);
-      background: rgba(30, 144, 255, 0.3);
-      box-shadow: 0 0 15px rgba(30, 144, 255, 0.7);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
-    /* Cards for management and team */
+    .service-card:hover {
+      transform: translateY(-5px);
+      background: #eaf6ff;
+    }
+
+    /* -------------------
+      Team & Management Cards
+    -------------------- */
     .card-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
+
     .card {
       width: 200px;
-      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #ddd;
       border-radius: 10px;
       text-align: center;
       padding: 15px;
-      backdrop-filter: blur(6px);
-      transition: all 0.4s ease;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
       cursor: pointer;
     }
+
     .card:hover {
-      transform: translateY(-8px) scale(1.05);
-      background: rgba(30, 144, 255, 0.3);
-      box-shadow: 0 0 15px rgba(30, 144, 255, 0.7);
+      transform: scale(1.05);
+      background: #eaf6ff;
     }
+
     .card img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 10px;
-      border: 2px solid #1e90ff;
-      transition: transform 0.4s ease;
     }
-    .card img:hover {
-      transform: scale(1.1) rotate(3deg);
-    }
+
     .card h4 {
       margin: 10px 0 5px;
       font-size: 16px;
-      color: #fff;
-    }
-    .card p {
-      font-size: 14px;
-      color: #ddd;
+      color: #0a3d62;
     }
 
-    /* Chatbot */
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* -------------------
+      Chatbot
+    -------------------- */
     .chatbot {
       position: fixed;
       bottom: 20px;
       right: 20px;
       width: 300px;
-      background: rgba(255,255,255,0.95);
+      background: #fff;
       border: 1px solid #ccc;
       border-radius: 10px;
       display: none;
       flex-direction: column;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-      z-index: 20;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 1002;
     }
+
     .chatbot-header {
       background: #0a3d62;
       color: #fff;
@@ -197,28 +212,32 @@
       border-radius: 10px 10px 0 0;
       font-size: 16px;
     }
+
     .chatbot-messages {
       padding: 10px;
       height: 200px;
       overflow-y: auto;
       font-size: 14px;
-      color: #000;
     }
+
     .chatbot-input {
       display: flex;
     }
+
     .chatbot-input input {
       flex: 1;
       padding: 10px;
       border: none;
       border-top: 1px solid #ccc;
     }
+
     .chatbot-input button {
       padding: 10px;
       background: #1e90ff;
       color: #fff;
       border: none;
     }
+
     .chatbot-toggle {
       position: fixed;
       bottom: 20px;
@@ -228,36 +247,41 @@
       padding: 10px 15px;
       border-radius: 50%;
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
-      z-index: 30;
-    }
-    .chatbot-toggle:hover {
-      transform: scale(1.2);
-      background: #1e90ff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 1002;
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-100px); }
-      to { opacity: 1; transform: translateX(0); }
+    /* -------------------
+      Responsive
+    -------------------- */
+    @media (max-width: 768px) {
+      section {
+        padding: 15px;
+      }
+
+      .card {
+        width: 150px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleSidebar()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
   <!-- Sidebar -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <h2>Al Shaf3iee</h2>
-    <a href="#general">General</a>
-    <a href="#services">Services</a>
-    <a href="#management">Management</a>
-    <a href="#team">Our Team</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#general" onclick="toggleSidebar()">General</a>
+    <a href="#services" onclick="toggleSidebar()">Services</a>
+    <a href="#management" onclick="toggleSidebar()">Management</a>
+    <a href="#team" onclick="toggleSidebar()">Our Team</a>
+    <a href="#projects" onclick="toggleSidebar()">Projects</a>
+    <a href="#contact" onclick="toggleSidebar()">Contact</a>
   </div>
 
   <!-- Content -->
@@ -385,7 +409,7 @@
     <!-- Contact Section -->
     <section id="contact">
       <h3>Contact Us</h3>
-      <p>Email: <a href="mailto:elshafiee@gmail.com" style="color:#1e90ff;">elshafiee@gmail.com</a></p>
+      <p>Email: <a href="mailto:elshafiee@gmail.com">elshafiee@gmail.com</a></p>
       <p>Phone: 010 | 011</p>
     </section>
   </div>
@@ -402,12 +426,20 @@
   </div>
 
   <script>
+    // Toggle Sidebar
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("active");
+    }
+
+    // Toggle Chat
     function toggleChat() {
       const bot = document.getElementById("chatbot");
       bot.style.display = bot.style.display === "flex" ? "none" : "flex";
       document.getElementById("userInput").focus();
     }
 
+    // Chat Functionality
     function sendMessage() {
       const input = document.getElementById("userInput");
       const msgBox = document.getElementById("messages");
@@ -418,7 +450,6 @@
       userMsg.textContent = "You: " + input.value;
       msgBox.appendChild(userMsg);
 
-      // Simple AI response placeholder
       const botMsg = document.createElement("div");
       botMsg.textContent = "AI: Thanks for your message! We will get back to you soon.";
       msgBox.appendChild(botMsg);
@@ -429,4 +460,3 @@
   </script>
 </body>
 </html>
-
