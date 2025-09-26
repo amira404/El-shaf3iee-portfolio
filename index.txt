@@ -1,0 +1,266 @@
+vCard - Personal Portfolio
+
+# sidebar
+
+alt = الشافعي
+EL-Shafiee
+El-Shafiee Engineering Solutions
+
+Show Contacts
+
+Email
+elshaf3iee@gmail.com
+
+Phone
++ (966) 53 749 5960
++ (971) 50 227 0351
+
+Birthday
+2020
+
+Location
+KSA
+
+
+# navbar
+
+About Us
+Services
+US
+Projects
+Contact
+
+# about
+
+About Us
+
+EL-Shafiee Engineering Solutions
+
+EL-Shafiee Engineering Solutions is a forward-thinking startup dedicated to redefining the engineering landscape. With a passion for innovation and precision, we focus on delivering sustainable and reliable solutions to meet the growing demands of the global market.
+
+Founded on the values of integrity, excellence, and creativity, we aim to establish ourselves as a trusted name in the engineering industry.
+Our team is driven by a shared vision to make a positive impact through smart, modern, and efficient engineering practices — serving clients across different regions around the
+
+## services
+
+What can we do!
+
+alt = Mech icon
+Mechanical Engineering
+Providing innovative mechanical solutions with precision and efficiency, ensuring reliable and sustainable designs.
+
+alt = Civl icon
+Civil Engineering
+Delivering strong and safe civil engineering solutions, from structural design to project supervision.
+
+alt = fire icon
+Firefighting Systems
+Designing and implementing advanced firefighting systems to ensure safety and compliance with global standards.
+
+alt = design icon
+Architectural Design
+Creating functional and modern architectural designs that bring clients’ visions to life.
+
+
+## management
+
+Management
+
+alt = Mohamed Gamal El Shafey  
+Mohamed Gamal El Shafey  
+Mechanical Engineer, Director  
+
+alt = Ammar Yasser El Shafey  
+Ammar Yasser El Shafey  
+Civil BIM Engineer, Director  
+
+
+## teammates
+
+alt = FAHD AHMED TAHA ABO ELNEIN  
+FAHD AHMED TAHA ABO ELNEIN  
+Mechanical Engineer – Specialized in Revision Drawings   
+
+alt = MOHAMED SHERIF ANANI ANANI  
+MOHAMED SHERIF ANANI ANANI  
+Mechanical Engineer – Specialized in Mechanical Drawings   
+
+alt = MOHAMED KAMEL HASSAN  
+MOHAMED KAMEL HASSAN  
+Mechanical BIM Engineer  
+
+alt = AHMED HAMDY FATHY YOUSEF  
+AHMED HAMDY FATHY YOUSEF  
+Mechanical Engineer – Specialized in Plumbing Drawings   
+
+alt = WALEED FAWZY AHMED  
+WALEED FAWZY AHMED  
+Planning Engineer   
+
+alt = HELMY ZAKRIA HUSSEIN  
+HELMY ZAKRIA HUSSEIN  
+QS Engineer   
+
+alt = MOHAMED SABER FATOUH  
+MOHAMED SABER FATOUH  
+Shop Drawings Engineer   
+
+alt = MOHAMED SABERY EL DAMMATI  
+MOHAMED SABERY EL DAMMATI  
+Steel Design Engineer   
+
+alt = YOUSEF ABDELNABY EL SHAFEY  
+YOUSEF ABDELNABY EL SHAFEY  
+Structural Design Engineer  
+
+
+## clients
+
+Clients
+
+alt = client logo
+
+
+
+# milestones
+
+Milestones
+
+## Our Journey
+
+alt = founded  
+2020  
+Founded **EL-Shafiee Engineering Solutions** with a mission to deliver innovative and precise engineering solutions.  
+
+alt = first-project  
+2021  
+Completed our **first international project** in KSA, establishing a strong foundation in the GCC region.  
+
+alt = new-services  
+2022  
+Expanded our services to include **Firefighting Systems** and **Architectural Design**.  
+
+alt = growing-team  
+2023  
+Built a growing team of specialized engineers covering **Mechanical, Civil, and Structural Engineering**.  
+
+alt = partnerships  
+2024  
+Partnered with key clients across **KSA and UAE**, delivering sustainable and high-quality designs.  
+
+
+## Company Highlights
+
+alt = projects-icon  
+20+  
+Completed Projects  
+
+alt = engineers-icon  
+10+  
+Specialized Engineers  
+
+alt = countries-icon  
+5+  
+Countries Served  
+
+alt = services-icon  
+4+  
+Core Services  
+
+
+
+# projects
+
+Projects
+
+All  
+Mechanical Engineering  
+Civil Engineering  
+Firefighting Systems  
+Architectural Design  
+
+Select category  
+All  
+Mechanical Engineering  
+Civil Engineering  
+Firefighting Systems  
+Architectural Design  
+
+
+alt = mechanical-project  
+Mechanical Systems Design  
+Mechanical Engineering  
+
+alt = civil-project  
+Structural Planning & Analysis  
+Civil Engineering  
+
+alt = firefighting-project  
+Firefighting Safety Solutions  
+Firefighting Systems  
+
+alt = architecture-project  
+Modern Architectural Design  
+Architectural Design  
+
+alt = mechanical-maintenance  
+HVAC & Plumbing Solutions  
+Mechanical Engineering  
+
+alt = civil-construction  
+Construction Management  
+Civil Engineering  
+
+alt = firefighting-installation  
+Firefighting Systems Installation  
+Firefighting Systems  
+
+alt = architecture-visualization  
+Architectural Visualization  
+Architectural Design  
+
+
+
+# updates
+
+Company Updates
+
+alt = new-project  
+New Project Secured in KSA  
+Sep 10, 2024  
+We are excited to announce a new large-scale mechanical engineering project in Riyadh, expanding our footprint in the GCC region.
+
+alt = new-office  
+Opening a New Branch in UAE  
+Aug 20, 2024  
+Our new office in Dubai is now operational to better serve our clients in the UAE and surrounding areas.
+
+alt = team-growth  
+Welcoming 3 New Engineers to Our Team  
+Jul 15, 2024  
+We are growing! Three highly skilled engineers have joined our team to enhance our capabilities across all services.
+
+alt = certification  
+ISO 9001 Certification Achieved  
+Jun 05, 2024  
+We are proud to have achieved ISO 9001 certification, ensuring the highest quality and compliance standards in our work.
+
+alt = safety-training  
+Safety Training Initiative Launched  
+May 22, 2024  
+We’ve launched a company-wide safety training program to maintain top safety standards across all our projects.
+
+
+
+
+# contact
+
+Contact
+
+Contact Form
+
+Full name
+Email address
+Your Message
+
+Send Message
