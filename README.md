@@ -5,10 +5,10 @@ Engineering design and project solutions in Mechanical, Civil, Firefighting, and
   <img src="logo.png" alt="Al Shafie Logo" width="250"/>
 </p>
 
-# Al Shafie Engineering Solutions – Portfolio
+# Al Shafiee Engineering Solutions – Portfolio
 
 ## About Us
-Al Shafie Engineering Solutions is a dynamic startup specializing in delivering **innovative and precise engineering services**.  
+Al Shafiee Engineering Solutions is a dynamic startup specializing in delivering **innovative and precise engineering services**.  
 We provide **mechanical, civil, firefighting, and architectural solutions**, combining technical expertise with creativity to meet our clients’ needs.  
 
 ## Services
@@ -18,7 +18,7 @@ We provide **mechanical, civil, firefighting, and architectural solutions**, com
 - **Architectural Drafting & Shop Drawings**: High-quality CAD and BIM-based drafting.  
 
 ## Management
-- **Mohamed Gamal El Shafey** – Director  
+- **Mohamed Gamal El Shafey** – Mechanical Engineer, Director – *2022*  
 - **Ammar Yasser Hassan El Shafey** – Civil BIM Engineer, Director – *2022*  
 
 ## Our Team
