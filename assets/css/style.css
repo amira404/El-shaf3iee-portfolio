@@ -1,0 +1,192 @@
+/* ===== Global Styles ===== */
+:root {
+  --primary-blue: #4da8ff; /* Light, nice blue */
+  --secondary-blue: #1e90ff; /* Slightly darker blue */
+  --white: #ffffff;
+  --accent-yellow: #f8c471; /* Hover accent color */
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ===== Animated Background ===== */
+body {
+  background: linear-gradient(270deg, var(--primary-blue), var(--secondary-blue));
+  background-size: 400% 400%;
+  animation: backgroundMove 12s ease infinite;
+  transition: background 0.5s ease;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== General Text ===== */
+h1, h2, h3, h4, h5, h6, p, span, a {
+  color: var(--white);
+  transition: color var(--transition-speed) ease;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background var(--transition-speed) ease;
+}
+
+.navbar a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-yellow);
+  transition: width var(--transition-speed) ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* ===== Section Layout ===== */
+section {
+  padding: 100px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+section:hover {
+  transform: scale(1.01);
+}
+
+/* ===== Buttons ===== */
+button, .btn {
+  background: var(--white);
+  color: var(--secondary-blue);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform var(--transition-speed) ease, background var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+button:hover, .btn:hover {
+  background: var(--accent-yellow);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+/* ===== Cards (Services, Projects, Team, etc.) ===== */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 15px;
+  transition: transform var(--transition-speed) ease, background var(--transition-speed) ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--white);
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 30px;
+}
+
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color var(--transition-speed) ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-yellow);
+}
+
+/* ===== Animations on Scroll ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Hover Animation for Clickable Elements ===== */
+a, button, .card {
+  cursor: pointer;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+a:hover, button:hover, .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-yellow);
+}
