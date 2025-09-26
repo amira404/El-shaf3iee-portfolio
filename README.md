@@ -5,15 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Shaf3iee Portfolio</title>
   <style>
-    body {
+    /* Reset */
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('background-engineering.jpg') no-repeat center center/cover;
-      background-attachment: fixed;
-      color: #fff;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Hamburger menu */
+    body {
+      font-family: Arial, sans-serif;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ===== BACKGROUND LAYERS ===== */
+    /* Static background image */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('background-engineering.jpg') no-repeat center center/cover;
+      z-index: -3;
+    }
+
+    /* Blue overlay */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 61, 98, 0.7);
+      z-index: -2;
+    }
+
+    /* Animated geometric shapes */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .animated-bg span {
+      position: absolute;
+      display: block;
+      width: 40px;
+      height: 40px;
+      background: rgba(30, 144, 255, 0.4);
+      animation: moveShapes 20s linear infinite;
+      border-radius: 5px;
+    }
+
+    .animated-bg span:nth-child(2) {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.2);
+      animation-duration: 25s;
+      left: 20%;
+    }
+
+    .animated-bg span:nth-child(3) {
+      width: 30px;
+      height: 30px;
+      background: rgba(0, 191, 255, 0.3);
+      animation-duration: 18s;
+      left: 40%;
+    }
+
+    .animated-bg span:nth-child(4) {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.25);
+      animation-duration: 22s;
+      left: 70%;
+    }
+
+    @keyframes moveShapes {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* ===== HAMBURGER MENU ===== */
     .menu-btn {
       position: fixed;
       top: 20px;
@@ -34,7 +125,7 @@
       transition: 0.3s;
     }
 
-    /* Sidebar hidden by default */
+    /* ===== SIDEBAR ===== */
     .sidebar {
       position: fixed;
       top: 0;
@@ -72,9 +163,11 @@
       background: #1e90ff;
     }
 
-    /* Content */
+    /* ===== CONTENT ===== */
     .content {
       padding: 80px 20px;
+      position: relative;
+      z-index: 10;
     }
 
     section {
@@ -82,13 +175,18 @@
       background: rgba(0,0,0,0.6);
       padding: 20px;
       border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    section:hover {
+      background: rgba(0,0,0,0.8);
     }
 
     h3 {
       color: #1e90ff;
     }
 
-    /* Logo */
+    /* ===== LOGO ===== */
     .logo {
       text-align: center;
       margin-bottom: 30px;
@@ -100,7 +198,7 @@
       background: none;
     }
 
-    /* Cards */
+    /* ===== CARDS ===== */
     .card-container {
       display: flex;
       flex-wrap: wrap;
@@ -117,7 +215,7 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-5px) scale(1.05);
       background: rgba(30,144,255,0.3);
     }
 
@@ -130,7 +228,7 @@
       border: 2px solid #fff;
     }
 
-    /* Chatbot */
+    /* ===== CHATBOT ===== */
     .chatbot-toggle {
       position: fixed;
       bottom: 20px;
@@ -191,6 +289,14 @@
   </style>
 </head>
 <body>
+
+<!-- ANIMATED BACKGROUND LAYER -->
+<div class="animated-bg">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
 <!-- Hamburger -->
 <div class="menu-btn" onclick="toggleMenu()">
@@ -275,7 +381,7 @@
   <!-- Contact Section -->
   <section id="contact">
     <h3>Contact Us</h3>
-    <p>Email: <a href="mailto:elshafiee@gmail.com">elshafiee@gmail.com</a></p>
+    <p>Email: <a href="mailto:elshafiee@gmail.com" style="color:#1e90ff;">elshafiee@gmail.com</a></p>
     <p>Phone: 010 | 011</p>
   </section>
 </div>
