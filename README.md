@@ -12,13 +12,21 @@
       box-sizing: border-box;
     }
 
+    /* Body with animated engineering background */
     body {
       font-family: Arial, sans-serif;
       display: flex;
-      background: linear-gradient(to right, rgba(10, 61, 98, 0.95), rgba(30, 144, 255, 0.85)),
-                  url('blueprint-bg.jpg') center/cover no-repeat fixed;
       color: #fff;
       overflow-x: hidden;
+      background: linear-gradient(to right, rgba(10, 61, 98, 0.95), rgba(30, 144, 255, 0.85)),
+                  url('background-engineering.jpg') center/cover no-repeat fixed;
+      animation: backgroundMove 20s linear infinite;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: center top; }
+      50% { background-position: center bottom; }
+      100% { background-position: center top; }
     }
 
     /* Sidebar */
@@ -33,12 +41,14 @@
       padding: 20px;
       box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
       animation: slideInLeft 1s ease;
+      z-index: 10;
     }
     .sidebar h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 22px;
       letter-spacing: 1px;
+      color: #1e90ff;
     }
     .sidebar a {
       display: block;
@@ -61,6 +71,8 @@
       margin-left: 260px;
       padding: 20px;
       width: calc(100% - 260px);
+      position: relative;
+      z-index: 5;
     }
     section {
       margin-bottom: 60px;
@@ -70,6 +82,7 @@
       color: #fff;
       margin-bottom: 15px;
       font-size: 24px;
+      text-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
     }
     p {
       line-height: 1.6;
@@ -88,7 +101,7 @@
       transition: transform 0.4s ease;
     }
     .general img:hover {
-      transform: scale(1.1);
+      transform: scale(1.1) rotate(2deg);
     }
     .general h1 {
       color: #fff;
@@ -118,7 +131,7 @@
       box-shadow: 0 0 15px rgba(30, 144, 255, 0.7);
     }
 
-    /* Cards */
+    /* Cards for management and team */
     .card-container {
       display: flex;
       flex-wrap: wrap;
@@ -174,6 +187,7 @@
       display: none;
       flex-direction: column;
       box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      z-index: 20;
     }
     .chatbot-header {
       background: #0a3d62;
@@ -216,6 +230,7 @@
       cursor: pointer;
       box-shadow: 0 2px 6px rgba(0,0,0,0.4);
       transition: transform 0.3s ease;
+      z-index: 30;
     }
     .chatbot-toggle:hover {
       transform: scale(1.2);
