@@ -158,3 +158,25 @@ style.innerHTML = `
   100% {background-position: 0% 50%;}
 }`;
 document.head.appendChild(style);
+
+
+'use strict';
+
+/* ====== Background Animation on Click ====== */
+document.body.addEventListener('click', function () {
+  document.body.style.animation = "backgroundMove 6s ease infinite";
+  setTimeout(() => {
+    document.body.style.animation = "backgroundMove 12s ease infinite";
+  }, 2000);
+});
+
+/* ====== Element Animation on Click ====== */
+document.querySelectorAll("a, button, .card").forEach(elem => {
+  elem.addEventListener("click", () => {
+    elem.style.transform = "scale(0.95)";
+    elem.style.transition = "transform 0.2s ease";
+    setTimeout(() => {
+      elem.style.transform = "scale(1)";
+    }, 200);
+  });
+});
