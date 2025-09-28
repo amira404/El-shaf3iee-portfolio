@@ -190,3 +190,133 @@ a:hover, button:hover, .card:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-yellow);
 }
+
+/* ===== Variables ===== */
+:root {
+  --primary-blue: #4da8ff;
+  --secondary-blue: #1e90ff;
+  --white: #ffffff;
+  --accent-yellow: #f8c471;
+  --transition-speed: 0.3s;
+}
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ===== Animated Background ===== */
+body {
+  background: linear-gradient(270deg, var(--primary-blue), var(--secondary-blue));
+  background-size: 400% 400%;
+  animation: backgroundMove 12s ease infinite;
+}
+
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-yellow);
+  transition: width var(--transition-speed) ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* ===== Sections ===== */
+section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.services-grid,
+.projects-grid,
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  transition: transform var(--transition-speed), background var(--transition-speed);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.25);
+  margin-top: 40px;
+}
+
+/* ===== Buttons ===== */
+button {
+  background: var(--white);
+  color: var(--secondary-blue);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  background: var(--accent-yellow);
+  color: var(--white);
+  transform: translateY(-3px);
+}
